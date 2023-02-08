@@ -1,12 +1,15 @@
-// import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import './Form.css'
 import { newAccessCode, validateAccessCode } from '../../api/user';
+import { useNavigate } from "react-router-dom";
+
 
 const Form = () => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [accessCode, setAccessCode] = useState('');
     const [message, setMessage] = useState('');
+
+    const navigate = useNavigate()
 
     const handleSubmit = async(e) => {
         e.preventDefault();
@@ -22,7 +25,7 @@ const Form = () => {
       setMessage(response.message || response.error);
       if (response.success) {
         localStorage.setItem('phoneNumber', phoneNumber);
-        // navigate('/user');
+        navigate('/user');
       }
     };
 

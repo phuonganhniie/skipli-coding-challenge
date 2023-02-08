@@ -23,7 +23,7 @@ class SearchUsers {
 
             const users = resp.data.items;
 
-            const filteredUsers = users.filter(user => user.login.includes(q));
+            const filteredUsers = users.filter(user => user.login.toLowerCase().includes(q.toLowerCase()));
 
             return filteredUsers;
         } catch (error) {

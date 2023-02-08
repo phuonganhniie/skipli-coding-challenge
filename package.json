@@ -19,6 +19,8 @@
     },
     "homepage": "https://github.com/phuonganhniie/skipli-coding-challenge#readme",
     "dependencies": {
+        "@fortawesome/free-solid-svg-icons": "^6.3.0",
+        "@fortawesome/react-fontawesome": "^0.2.0",
         "axios": "^1.3.2",
         "cors": "^2.8.5",
         "dotenv": "^16.0.3",

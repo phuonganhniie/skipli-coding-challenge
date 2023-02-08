@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const DEFAULT_HOST_URL = 'http://192.168.1.101:3003'
+const DEFAULT_HOST_URL = 'http://localhost:3003'
 
 export const newAccessCode = async(phoneNumber) => {
     try {
@@ -19,3 +19,19 @@ export const validateAccessCode = async(phoneNumber, accessCode) => {
         return error;
     }
 };
+
+export const likeGithubUser = async(phoneNumber, githubUserName) => {
+    try {
+        const response = await axios.post(DEFAULT_HOST_URL + '/github/like-github-user', {
+            phoneNumber: phoneNumber,
+            githubUserName: githubUserName
+        });
+
+        if (!response.data.success) {
+            console.error(response.data.message);
+        }
+        return response;
+    } catch (error) {
+        return error
+    }
+}
