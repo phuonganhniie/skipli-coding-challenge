@@ -8,7 +8,7 @@ const Search = () => {
     const [searchResults, setSearchResults] = useState([]);
     const [errorMessage, setErrorMessage] = useState("");
     const [page, setPage] = useState(1);
-    const [resultsPerPage, setResultsPerPage] = useState(10);
+    const [resultsPerPage] = useState(10);
 
     const handleChange = (e) => {
         setSearchTerm(e.target.value);
@@ -37,18 +37,6 @@ const Search = () => {
                         onChange={handleChange}
                     />
                     <button type="submit" className="btn btn-outline-success my-2 my-sm-0">Search</button>
-                    <div>
-                        <input
-                            type="number"
-                            value={page}
-                            onChange={e => setPage(e.target.value)}
-                        />
-                        <input
-                            type="number"
-                            value={resultsPerPage}
-                            onChange={e => setResultsPerPage(e.target.value)}
-                        />
-                    </div>
                 </form>
                 <div className="profile-icon">
                     <i className="fa fa-user" aria-hidden="true"></i>

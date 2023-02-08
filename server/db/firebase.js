@@ -1,15 +1,15 @@
 const { initializeApp } = require('firebase/app');
-const { getDatabase, ref, set, child, get, onValue } = require('firebase/database');
+const { getDatabase, ref, set, child, get } = require('firebase/database');
 
 const firebaseConfig = {
     apiKey: process.env.FIREBASE_API_KEY,
-    authDomain: "skipli-coding-challenge-81958.firebaseapp.com",
-    projectId: "skipli-coding-challenge-81958",
-    storageBucket: "skipli-coding-challenge-81958.appspot.com",
-    messagingSenderId: "466895536002",
-    appId: "1:466895536002:web:85580eb44ad793dc62999b",
-    measurementId: "G-Z81HXDQQ9M",
-    "databaseURL": "https://skipli-coding-challenge-81958-default-rtdb.asia-southeast1.firebasedatabase.app"
+    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.FIREBASE_APP_ID,
+    measurementId: process.env.FIREBASE_MEASURE_ID,
+    "databaseURL": process.env.FIREBASE_DATABASE_URL
 };
 
 // Initialize Firebase

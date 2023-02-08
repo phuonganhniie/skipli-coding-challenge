@@ -11,7 +11,6 @@ export const searchGithubUsers = async(q, page, per_page) => {
                 per_page
             },
         });
-
         return response.data.users;
     } catch (error) {
         throw error;
